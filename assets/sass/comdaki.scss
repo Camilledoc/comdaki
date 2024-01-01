@@ -1,0 +1,65 @@
+@import 'variables';
+@import 'fonts';
+
+body {
+    color: $blackLight;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Inter';
+    font-size: 2rem;
+    font-weight: 600;
+    color: $blackLight;
+    @media (max-width: $mobile-breakpoint) {
+        font-size: 2.8rem;
+    }
+}
+
+h2 {
+    font-family: 'Inter';
+    font-size: 2rem;
+    font-weight: 600;
+    color: $blackLight;
+    @media (max-width: $mobile-breakpoint) {
+        font-size: 2.8rem;
+    }
+}
+
+h3 {
+    font-family: 'Inter';
+    font-size: 2rem;
+    font-weight: 600;
+    color: $blackLight;
+    @media (max-width: $mobile-breakpoint) {
+        font-size: 2.8rem;
+    }
+}
+
+h4 {
+    font-family: 'Inter';
+    font-size: 2rem;
+    font-weight: 600;
+    color: $blackLight;
+    @media (max-width: $mobile-breakpoint) {
+        font-size: 1.1rem;
+    }
+}
+
+p {
+    font-family: 'Gayathri';
+    font-size: 1rem;
+    font-weight: 300;
+    color: $blackLight;
+}
+
+.point {
+    font-family: 'Inter';
+    font-size: 2rem;
+    font-weight: 600;
+    color: $blackLight;
+    @media (max-width: $mobile-breakpoint) {
+        font-size: 1.1rem;
+    }
+}
+
