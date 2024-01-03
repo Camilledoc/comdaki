@@ -1,0 +1,359 @@
+@font-face {
+  font-family: "Comfortaa";
+  src: local("Comfortaa"), local("Comfortaa"), url(../fonts/Comfortaa/Comfortaa-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"), local("Inter"), url(../fonts/Inter/Inter-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.header {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header img {
+  width: 100%;
+}
+
+nav {
+  font-size: 2rem;
+  line-height: 4rem;
+  padding-top: 180px;
+}
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-menu-principal {
+  padding: 0;
+}
+#menu-menu-principal a:hover {
+  color: #e9c46A;
+}
+
+#menu-toggle {
+  visibility: hidden;
+  position: fixed;
+  width: 350px;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  background-color: #e76f51;
+  text-transform: uppercase;
+  z-index: 50;
+}
+
+#nav-buger {
+  width: 45px;
+  height: 31px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  z-index: 100;
+}
+
+#nav-buger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #171717;
+  border-radius: 35px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+#nav-buger span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#nav-buger span:nth-child(2) {
+  top: 12px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#nav-buger span:nth-child(3) {
+  top: 24px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#nav-buger.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -3px;
+  left: 8px;
+}
+
+#nav-buger.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+#nav-buger.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 30px;
+  left: 8px;
+}
+
+@keyframes fadeMenu {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+#nav-buger.open + #menu-toggle {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeMenu 0.3s ease-out;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero__bg {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  background-image: url("../images/hero-photo.webp");
+  background-size: cover;
+  background-position: center;
+}
+.hero__bg::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 77%;
+  height: 62%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  z-index: 0;
+}
+
+/* Titre h1 */
+.hero__title {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+}
+
+.hero__logo {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.hero__logo img {
+  width: 90%;
+}
+@media (max-width: 1024px) {
+  .hero__logo img {
+    width: 120%;
+  }
+}
+@media (max-width: 768px) {
+  .hero__logo img {
+    width: 175%;
+  }
+}
+
+.hero__subtitle {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.hero__button {
+  position: absolute;
+  top: 70%; /* Ajustez la position verticale du bouton */
+  left: 50%; /* Ajustez la position horizontale du bouton */
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+body {
+  color: #171717;
+  margin: 20px 20px;
+}
+@media (max-width: 768px) {
+  body {
+    margin: 10px 10px;
+  }
+}
+@media (max-width: 1024px) {
+  body {
+    margin: 20px 20px;
+  }
+}
+
+h1 {
+  font-family: "Comfortaa";
+  font-size: 2rem;
+  font-weight: 600;
+  color: #171717;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1rem;
+  }
+}
+
+h2 {
+  font-family: "Comfortaa";
+  font-size: 2rem;
+  font-weight: 600;
+  color: #171717;
+}
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2.8rem;
+  }
+}
+
+h3 {
+  font-family: "Comfortaa";
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #171717;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  h3 {
+    font-size: 0.7rem;
+  }
+}
+
+h4 {
+  font-family: "Comfortaa";
+  font-size: 2rem;
+  font-weight: 600;
+  color: #171717;
+}
+@media (max-width: 768px) {
+  h4 {
+    font-size: 1.1rem;
+  }
+}
+
+p {
+  font-family: "Inter";
+  font-size: 1rem;
+  font-weight: 300;
+  color: #171717;
+}
+
+.point {
+  font-family: "Inter";
+  font-size: 2rem;
+  font-weight: 600;
+  color: #171717;
+}
+@media (max-width: 768px) {
+  .point {
+    font-size: 1.1rem;
+  }
+}
+
+a, li {
+  font-family: "Inter";
+  text-decoration: none;
+  color: #171717;
+  list-style-type: none;
+}
+
+a:hover {
+  font-weight: 600;
+  color: #264653;
+}
+
+button {
+  transition: 0.3s all ease-in-out;
+  position: relative;
+  background: #f4a261;
+  border: none;
+  border-radius: 10px;
+  width: 200px;
+  height: 50px;
+  font-family: "Inter";
+  font-size: 1rem;
+}
+button:before {
+  border-top: 0.2rem solid #f4a261;
+  border-bottom: 0.2rem solid #f4a261;
+  display: block;
+  position: absolute;
+  background: transparent;
+  content: "";
+  top: 0;
+  bottom: 0;
+  transition: 0.48s all ease-in-out;
+}
+button:hover {
+  letter-spacing: 0.1rem;
+  background-color: transparent;
+}
+button:hover:before {
+  left: 25%;
+  right: 25%;
+}
+
+/*# sourceMappingURL=comdaki.css.map */

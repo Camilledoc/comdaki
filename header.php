@@ -9,18 +9,25 @@
 </head>
 
 <header>
-<div class="header-motaphoto">
-<a href="<?php echo get_home_url(); ?>">
-<img src="<?php echo get_template_directory_uri() . '\assets\images\LOGO.webp'; ?> " alt="logo comdaki">
-</a>
-<nav>
-<?php /*affiche mon menu header */
- wp_nav_menu([
-	'theme_location' => 'main-menu'
-]); 
-?>
-</nav>
-</div>
+	<div class="header">
+		<a href="<?php echo get_home_url(); ?>">
+			<img src="<?php echo get_template_directory_uri() . '\assets\images\favicon.webp'; ?> " alt="favicon comdaki">
+		</a>
+
+	<a href="#menu-toggle" id="nav-buger">
+		<span></span>
+		<span></span>
+		<span></span>
+	</a>
+
+	<nav id="menu-toggle">
+		<?php /*affiche mon menu header */
+		wp_nav_menu([
+			'theme_location' => 'main-menu'
+		]); 
+		?>
+	</nav>
+	</div>
 </header>
 
 <body>
