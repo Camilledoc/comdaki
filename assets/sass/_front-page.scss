@@ -33,7 +33,7 @@
 }
 
 .hero__logo {
-    width: auto;
+    width: 50%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -65,6 +65,218 @@
   left: 50%; /* Ajustez la position horizontale du bouton */
   transform: translateX(-50%);
   z-index: 2;
-}
+}  
 
 //prestations 
+.prestations__carres{
+    display: flex;
+    flex-direction: row; 
+    justify-content:space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.i-horizontal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:7px;
+}
+
+.prestations__carre{
+    width: 400px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    //border : 1px solid $orange;
+    border-radius: 10px;
+    background-color: transparent;
+    transition: background-color 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  padding-left: 10px; /* Ajout d'un espace pour la barre à gauche */
+    box-shadow: 0 8px 45px 3px rgba(0, 0, 0, 0.13);
+    max-width: calc(33.33% - 10px);
+	i {
+    font-size: 2rem;
+    color: $orangeLight;
+    transition: color 0.2s ease-in-out;    
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    left: -45px; /* Position de départ de la barre à gauche */
+    width: 50px; /* Largeur initiale de la barre */
+    height: 100%;
+    background: linear-gradient(to top right, $orangeLight,$orange); /* Dégradé au survol */
+    transition: width 0.3s ease; /* Transition de la largeur pour l'effet d'agrandissement */    z-index: -1; 
+  }
+  &:hover::before {
+    width: 150%; /* Agrandit la barre pour remplir le fond */
+}
+&:hover i {
+    color: $blackLight;
+}
+}
+
+.prestations__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 11px;
+}
+
+//portefolio
+.cercle-conteneur-porte {
+    position: absolute;
+    right: 6px;
+}
+
+.portefolio {
+    background-color: white;
+    position: relative;
+}
+
+.portefolio_catalogue {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.projet {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 34vw;
+    padding: 5px; 
+    max-width: 60rem;
+    box-sizing: border-box; /* Inclure les marges et les paddings dans la largeur */
+    @media (max-width: $mobile-breakpoint) {
+        width:100%;} 
+}
+
+.projet_thumbnail {
+    width: 100%; 
+    padding-bottom: 100%; /* Pour maintenir le ratio carré des images */
+    position: relative;
+    &:before {
+        z-index:1;
+        content: '';
+        position: absolute;
+        border-radius: 10px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0); /* Couleur noire transparente */
+        transition: background-color 0.5s ease; /* Transition fluide */
+        }
+    }
+
+.image-projet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    //border: 1px solid $blackLight;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 45px 3px rgba(0, 0, 0, 0.13);
+    }
+
+.projet_details {
+    z-index: 2;
+    position: relative;
+    bottom: 555px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 580px;
+    height: 100px;
+    max-width: 60rem;
+    opacity: 0;
+    transition: opacity 0.6s ease ;/* Ajoute une transition douce */
+
+    h5 {
+        display: none;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        margin:15px 0;
+        line-height: 1.8rem;
+    }
+    p {
+        display: none;
+        font-size: 1.2rem;
+        margin: 0;
+    }
+    i {
+        display: none;
+        font-size: 2rem;
+        margin:15px 0;
+    }
+}
+
+.projet:hover .projet_details h5,
+.projet:hover .projet_details p,
+.projet:hover .projet_details i {
+    display: block;
+}
+
+.projet:hover .projet_details {
+    opacity: 1;
+}
+
+.projet:hover .projet_thumbnail::before {
+    background-color: rgba(42, 157, 143, 0.767); /* Couleur noire semi-transparente au survol */
+}
+
+.portefolio__button {
+    display: flex;
+    justify-content: center;
+}
+
+// à propos
+.a-propos {
+    position: relative;
+}
+
+.a-propos__content {
+    display: flex;
+    flex-direction: row;
+}
+
+.vague-conteneur-a-propos{
+    position: absolute;
+}
+
+.a-propos__texte {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+    max-width:600px; 
+    font-size: 1.2rem;
+    text-align: justify;
+    }
+}
+
+.a-propos__photo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+    max-width: 31%;
+    height: auto;
+    }
+}

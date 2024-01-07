@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Comfortaa";
   src: local("Comfortaa"), local("Comfortaa"), url(../fonts/Comfortaa/Comfortaa-Regular.ttf) format("truetype");
@@ -19,6 +20,7 @@
 }
 .header img {
   width: 100%;
+  margin-bottom: 20px;
 }
 
 nav {
@@ -189,7 +191,7 @@ nav ul {
 }
 
 .hero__logo {
-  width: auto;
+  width: 50%;
   height: auto;
   display: flex;
   justify-content: center;
@@ -229,9 +231,281 @@ nav ul {
   z-index: 2;
 }
 
+.prestations__carres {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.i-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 7px;
+}
+
+.prestations__carre {
+  width: 400px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: transparent;
+  transition: background-color 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 10px; /* Ajout d'un espace pour la barre à gauche */
+  box-shadow: 0 8px 45px 3px rgba(0, 0, 0, 0.13);
+  max-width: calc(33.33% - 10px);
+}
+.prestations__carre i {
+  font-size: 2rem;
+  color: #f4a261;
+  transition: color 0.2s ease-in-out;
+}
+.prestations__carre:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: -45px; /* Position de départ de la barre à gauche */
+  width: 50px; /* Largeur initiale de la barre */
+  height: 100%;
+  background: linear-gradient(to top right, #f4a261, #e76f51); /* Dégradé au survol */
+  transition: width 0.3s ease; /* Transition de la largeur pour l'effet d'agrandissement */
+  z-index: -1;
+}
+.prestations__carre:hover::before {
+  width: 150%; /* Agrandit la barre pour remplir le fond */
+}
+.prestations__carre:hover i {
+  color: #171717;
+}
+
+.prestations__button {
+  display: flex;
+  justify-content: center;
+  margin-top: 11px;
+}
+
+.cercle-conteneur-porte {
+  position: absolute;
+  right: 6px;
+}
+
+.portefolio {
+  background-color: white;
+  position: relative;
+}
+
+.portefolio_catalogue {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.projet {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 34vw;
+  padding: 5px;
+  max-width: 60rem;
+  box-sizing: border-box; /* Inclure les marges et les paddings dans la largeur */
+}
+@media (max-width: 768px) {
+  .projet {
+    width: 100%;
+  }
+}
+
+.projet_thumbnail {
+  width: 100%;
+  padding-bottom: 100%; /* Pour maintenir le ratio carré des images */
+  position: relative;
+}
+.projet_thumbnail:before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Couleur noire transparente */
+  transition: background-color 0.5s ease; /* Transition fluide */
+}
+
+.image-projet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 45px 3px rgba(0, 0, 0, 0.13);
+}
+
+.projet_details {
+  z-index: 2;
+  position: relative;
+  bottom: 555px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 580px;
+  height: 100px;
+  max-width: 60rem;
+  opacity: 0;
+  transition: opacity 0.6s ease; /* Ajoute une transition douce */
+}
+.projet_details h5 {
+  display: none;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin: 15px 0;
+  line-height: 1.8rem;
+}
+.projet_details p {
+  display: none;
+  font-size: 1.2rem;
+  margin: 0;
+}
+.projet_details i {
+  display: none;
+  font-size: 2rem;
+  margin: 15px 0;
+}
+
+.projet:hover .projet_details h5,
+.projet:hover .projet_details p,
+.projet:hover .projet_details i {
+  display: block;
+}
+
+.projet:hover .projet_details {
+  opacity: 1;
+}
+
+.projet:hover .projet_thumbnail::before {
+  background-color: rgba(42, 157, 143, 0.767); /* Couleur noire semi-transparente au survol */
+}
+
+.portefolio__button {
+  display: flex;
+  justify-content: center;
+}
+
+.a-propos {
+  position: relative;
+}
+
+.a-propos__content {
+  display: flex;
+  flex-direction: row;
+}
+
+.vague-conteneur-a-propos {
+  position: absolute;
+}
+
+.a-propos__texte {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.a-propos__texte p {
+  max-width: 600px;
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+.a-propos__photo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.a-propos__photo img {
+  max-width: 31%;
+  height: auto;
+}
+
+.containter-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  margin: 0 20rem 0 20rem;
+}
+
+.containter-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  margin: 0 20rem 0 20rem;
+}
+
+.containter-left h3, .containter-right h3 {
+  color: #e76f51;
+  margin: 0.6rem;
+}
+
+.containter-left h5, .containter-right h5 {
+  margin: 0.3rem 0 1rem 0;
+  font-weight: 600;
+}
+
+.containter-left li, .containter-right li {
+  padding: 0.5rem;
+}
+.containter-left li:before, .containter-right li:before {
+  content: "•";
+  color: #e76f51;
+  padding: 0.2rem;
+}
+
+.containter-left ul, .containter-right ul {
+  width: 50%;
+}
+
+.containter-left img, .containter-right img {
+  padding: 0;
+  width: 200px;
+  transform: rotate(90deg);
+  position: absolute;
+}
+
+.vague-1 {
+  top: 30%;
+  left: 6%;
+}
+
+.prestations__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   color: #171717;
   margin: 20px 20px;
+  max-width: 120rem;
+  margin: 0 auto;
 }
 @media (max-width: 768px) {
   body {
@@ -256,16 +530,22 @@ h1 {
     font-size: 1rem;
   }
 }
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
 
 h2 {
-  font-family: "Comfortaa";
-  font-size: 2rem;
-  font-weight: 600;
+  font-family: "Inter";
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
   color: #171717;
 }
 @media (max-width: 768px) {
   h2 {
-    font-size: 2.8rem;
+    font-size: 0.5rem;
   }
 }
 
@@ -284,12 +564,50 @@ h3 {
 
 h4 {
   font-family: "Comfortaa";
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.7rem;
+  font-weight: 400;
   color: #171717;
+  text-align: center;
 }
 @media (max-width: 768px) {
   h4 {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 1024px) {
+  h4 {
+    font-size: 1.1rem;
+  }
+}
+
+h5 {
+  font-family: "Inter";
+  font-size: 1rem;
+  font-weight: 400;
+  color: #171717;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  h5 {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 1024px) {
+  h5 {
+    font-size: 1.1rem;
+  }
+}
+
+h6 {
+  font-family: "Comfortaa";
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #171717;
+  margin: 1rem 1rem 1rem 2rem;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  h6 {
     font-size: 1.1rem;
   }
 }
@@ -297,20 +615,28 @@ h4 {
 p {
   font-family: "Inter";
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   color: #171717;
 }
 
 .point {
   font-family: "Inter";
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 600;
-  color: #171717;
+  color: #e76f51;
 }
 @media (max-width: 768px) {
   .point {
     font-size: 1.1rem;
   }
+}
+
+.cercle {
+  width: 400px;
+}
+
+.vague {
+  width: 200px;
 }
 
 a, li {
@@ -328,32 +654,62 @@ a:hover {
 button {
   transition: 0.3s all ease-in-out;
   position: relative;
-  background: #f4a261;
+  background: #264653;
   border: none;
   border-radius: 10px;
   width: 200px;
   height: 50px;
   font-family: "Inter";
   font-size: 1rem;
+  color: white;
+  margin-top: 12px;
+  box-shadow: 0 8px 45px 3px rgba(0, 0, 0, 0.13);
 }
 button:before {
-  border-top: 0.2rem solid #f4a261;
-  border-bottom: 0.2rem solid #f4a261;
-  display: block;
+  content: "";
+  border-top: 0.2rem solid #264653;
+  border-bottom: 0.2rem solid #264653;
   position: absolute;
   background: transparent;
-  content: "";
   top: 0;
   bottom: 0;
-  transition: 0.48s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 button:hover {
   letter-spacing: 0.1rem;
   background-color: transparent;
+  color: #264653;
 }
 button:hover:before {
   left: 25%;
   right: 25%;
+}
+
+.titre-page {
+  position: relative;
+}
+.titre-page:after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%; /* Début du soulignement au centre du titre */
+  width: 100%;
+  height: 2px; /* Hauteur du soulignement */
+  background-color: #f4a261;
+  transform: translateX(-50%);
+  animation: apparitionSoulignement 2s forwards;
+}
+
+@keyframes apparitionSoulignement {
+  0% {
+    width: 0; /* Début de l'animation avec une largeur nulle */
+  }
+  50% {
+    width: calc(70% - 40px); /* À mi-chemin de l'animation, largeur du soulignement */
+  }
+  100% {
+    width: calc(70% - 40px); /* Fin de l'animation, maintient la largeur du soulignement */
+  }
 }
 
 /*# sourceMappingURL=comdaki.css.map */

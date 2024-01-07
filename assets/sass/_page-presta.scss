@@ -1,0 +1,58 @@
+.containter-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:baseline;
+    margin: 0 20rem 0 20rem;
+    //width: 70%;
+}
+
+.containter-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:end;
+    margin: 0 20rem 0 20rem;
+}
+
+.containter-left h3, .containter-right h3{
+    color: $orange;
+    margin: 0.6rem;
+}
+
+.containter-left h5, .containter-right h5{
+    margin: 0.3rem 0 1rem 0; 
+    font-weight: 600;
+}
+
+.containter-left li, .containter-right li{
+    padding: 0.5rem;
+    &:before{
+        content: "•"; 
+        color: $orange;
+        padding: 0.2rem;
+    }
+}
+
+.containter-left ul, .containter-right ul {
+    width: 50%;
+}
+
+.containter-left img, .containter-right img {
+    padding: 0;
+    width: 200px;
+    transform: rotate(90deg);
+    position: absolute;   
+}
+
+.vague-1 {
+    top:30%;
+    left:6%;
+}
+
+.prestations__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
