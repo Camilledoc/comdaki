@@ -26,7 +26,26 @@ theToggle.on('click', function() {
     return false;
 });
 
+//animation cercle page d'accueil  
+const $cercle1 = $('.vague-conteneur-a-propos');
+const initialPositionCercle1 = 2124
 
+// Obtenir la position verticale de l'élément 
+const positionYcercle1 = $cercle1.offset().top;
+//console.log(positionYcercle1); 
+/*
+$(document).scroll(function() {
+    let scrollPercent = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
+    //console.log(scrollPercent);
+    if (scrollPercent > 76.5) {
+        $cercle1.css('top', (initialPositionCercle1 - ((scrollPercent - 76.5) * 0.2)) + 'px');
+      }
+     /*if (scrollPercent > 100) {
+        $cercle1.css('top', '1145px');
+      }*/
+//});
+
+/*
 //animation vague 
 const $vague1 = $('.vague-1');
 const initialPositionVague1 = 34.953125
@@ -46,5 +65,5 @@ $(document).scroll(function() {
       if (scrollPercent > 33) {
         $vague1.css('left', '500px');
       }
-});
+});*/
 })(jQuery);

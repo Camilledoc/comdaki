@@ -6,8 +6,10 @@
                 'theme_location' => 'footer'
             ]); 
             ?>
-            <p>Tous droits réservés</p>
         </nav>
+    </div>
+    <div class="copy">
+        <p>| © Comdaki 2024</p>
     </div>
 </footer>
 <?php wp_footer() ?>

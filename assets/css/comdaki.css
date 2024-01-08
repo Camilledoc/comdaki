@@ -156,17 +156,62 @@ nav ul {
   animation: fadeMenu 0.3s ease-out;
 }
 
+footer {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-top: solid 1px #f4a261;
+}
+
+.menu-footer nav {
+  line-height: 0;
+  padding: 0;
+}
+.menu-footer nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.copy p {
+  font-size: 1.4rem !important;
+  margin-left: 10px;
+}
+
+#menu-pied-de-page {
+  padding: 0;
+}
+#menu-pied-de-page a {
+  font-size: 1.4rem;
+}
+#menu-pied-de-page a:hover {
+  color: #e76f51;
+}
+
 .hero {
   position: relative;
+  height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .hero__bg {
-  position: relative;
-  height: 70vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
   background-image: url("../images/hero-photo.webp");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+  border-radius: 10px;
 }
 .hero__bg::before {
   content: "";
@@ -174,14 +219,13 @@ nav ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 77%;
-  height: 62%;
+  width: 80%;
+  height: 60%;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   z-index: 0;
 }
 
-/* Titre h1 */
 .hero__title {
   position: absolute;
   top: 52%;
@@ -196,7 +240,7 @@ nav ul {
   display: flex;
   justify-content: center;
   position: absolute;
-  top: 18%;
+  top: 24%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -290,7 +334,7 @@ nav ul {
 .prestations__button {
   display: flex;
   justify-content: center;
-  margin-top: 11px;
+  margin: 50px;
 }
 
 .cercle-conteneur-porte {
@@ -318,7 +362,6 @@ nav ul {
   align-items: center;
   width: 34vw;
   padding: 5px;
-  max-width: 60rem;
   box-sizing: border-box; /* Inclure les marges et les paddings dans la largeur */
 }
 @media (max-width: 768px) {
@@ -372,6 +415,7 @@ nav ul {
 .projet_details h5 {
   display: none;
   font-size: 1.6rem;
+  font-weight: 700;
   text-transform: uppercase;
   margin: 15px 0;
   line-height: 1.8rem;
@@ -398,7 +442,7 @@ nav ul {
 }
 
 .projet:hover .projet_thumbnail::before {
-  background-color: rgba(42, 157, 143, 0.767); /* Couleur noire semi-transparente au survol */
+  background-color: rgba(244, 162, 97, 0.8);
 }
 
 .portefolio__button {
@@ -413,10 +457,13 @@ nav ul {
 .a-propos__content {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .vague-conteneur-a-propos {
   position: absolute;
+  right: 114px;
+  top: -180px;
 }
 
 .a-propos__texte {
@@ -430,6 +477,11 @@ nav ul {
   max-width: 600px;
   font-size: 1.2rem;
   text-align: justify;
+  line-height: 2rem;
+}
+
+.a-propos__button {
+  margin: 50px;
 }
 
 .a-propos__photo {
@@ -441,6 +493,7 @@ nav ul {
 .a-propos__photo img {
   max-width: 31%;
   height: auto;
+  margin-right: 200px;
 }
 
 .containter-left {
@@ -503,9 +556,10 @@ nav ul {
 
 body {
   color: #171717;
-  margin: 20px 20px;
+  padding: 20px 20px;
   max-width: 120rem;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 @media (max-width: 768px) {
   body {
@@ -617,6 +671,12 @@ p {
   font-size: 1rem;
   font-weight: 400;
   color: #171717;
+}
+
+.prestations,
+.portefolio,
+.a-propos {
+  margin: 30px 0;
 }
 
 .point {

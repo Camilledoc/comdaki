@@ -1,14 +1,16 @@
 @import 'variables';
 @import 'fonts';
 @import 'header';
+@import 'footer';
 @import 'front-page';
 @import 'page-presta'; 
 
 body {
     color: $blackLight;
-    margin: 20px 20px;
+    padding: 20px 20px;
     max-width: 120rem; 
     margin: 0 auto;
+    box-sizing: border-box;
 
     @media (max-width: $mobile-breakpoint) {
         margin: 10px 10px;
@@ -101,6 +103,13 @@ p {
     font-size: 1rem;
     font-weight: 400;
     color: $blackLight;
+}
+
+.prestations, 
+.portefolio, 
+.a-propos
+ {
+    margin : 30px 0;
 }
 
 .point {
