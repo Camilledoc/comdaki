@@ -1,0 +1,36 @@
+.projet-photo__images {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.single-image {
+    width: 30%;
+    height: auto;
+    object-fit: cover; 
+    transition: transform 0.3s ease-in-out; 
+    padding: 20px 40px;
+}
+
+.single-image:hover {
+    transform: scale(1.1);
+}
+
+.projet-photo__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw; 
+    margin: 0 auto; 
+    p {
+        font-size: 1.2rem;
+        text-align: justify;
+        line-height: 2rem;
+    }
+}
+
+.projet__mission {
+    color: $orange; 
+    font-weight: 600;
+}

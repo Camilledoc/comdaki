@@ -68,21 +68,31 @@
 }
 
 .hero__button {
-    position: absolute;
+position: absolute;
   top: 70%; /* Ajustez la position verticale du bouton */
   left: 50%; /* Ajustez la position horizontale du bouton */
   transform: translateX(-50%);
   z-index: 2;
 }  
 
+#contact {
+    margin: 12px; 
+}
 //prestations 
+.prestations {
+    position: relative;
+}
+
 .prestations__carres{
     display: flex;
     flex-direction: row; 
     justify-content:space-around;
     align-items: center;
     flex-wrap: wrap;
-}
+    gap: 10px; 
+    width: 100%;
+    height: auto;
+ }
 
 .i-horizontal{
     display: flex;
@@ -96,7 +106,6 @@
     height: 200px;
     position: relative;
     overflow: hidden;
-    //border : 1px solid $orange;
     border-radius: 10px;
     background-color: transparent;
     transition: background-color 0.5s ease-in-out;
@@ -105,12 +114,11 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-  padding-left: 10px; /* Ajout d'un espace pour la barre à gauche */
+    padding-left: 10px; /* Ajout d'un espace pour la barre à gauche */
     box-shadow: 0 8px 45px 3px rgba(0, 0, 0, 0.13);
-    max-width: calc(33.33% - 10px);
 	i {
     font-size: 2rem;
-    color: $orangeLight;
+    color: $greenLight;
     transition: color 0.2s ease-in-out;    
   }
   &:before{
@@ -135,7 +143,6 @@
 .prestations__button {
     display: flex;
     justify-content: center;
-    margin: 50px;
 }
 
 //portefolio
@@ -154,15 +161,13 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .projet {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 34vw;
+    width: calc(100% / 3 - 20px);
     padding: 5px; 
     box-sizing: border-box; /* Inclure les marges et les paddings dans la largeur */
     @media (max-width: $mobile-breakpoint) {
@@ -182,7 +187,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0); /* Couleur noire transparente */
+        background-color: rgba(0, 0, 0, 0); 
         transition: background-color 0.5s ease; /* Transition fluide */
         }
     }
@@ -193,7 +198,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    //border: 1px solid $blackLight;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 8px 45px 3px rgba(0, 0, 0, 0.13);
@@ -201,17 +205,17 @@
 
 .projet_details {
     z-index: 2;
-    position: relative;
-    bottom: 555px;
+    position: absolute;
+    top: 20px;
     left: 20px;
     display: flex;
     flex-direction: column;
-    width: 580px;
+    width: 80%;
     height: 100px;
     max-width: 60rem;
     opacity: 0;
     transition: opacity 0.6s ease ;/* Ajoute une transition douce */
-
+    color: $green; 
     h5 {
         display: none;
         font-size: 1.6rem;
@@ -229,6 +233,7 @@
         display: none;
         font-size: 2rem;
         margin:15px 0;
+        color: $greenLight;
     }
 }
 
@@ -243,7 +248,7 @@
 }
 
 .projet:hover .projet_thumbnail::before {
-    background-color: rgba(244, 162, 97, 0.8); 
+    background-color: rgba(255, 255, 255, 0.6); 
 }
 
 .portefolio__button {
@@ -262,28 +267,18 @@
     justify-content: center;
 }
 
-.vague-conteneur-a-propos{
-    position: absolute;
-    right: 114px;
-    top: -180px;
-}
-
 .a-propos__texte {
-    flex: 1;
+    flex: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     p {
-    max-width:600px; 
+    max-width:80%; 
     font-size: 1.2rem;
     text-align: justify;
     line-height: 2rem;
     }
-}
-
-.a-propos__button {
-    margin: 50px;
 }
 
 .a-propos__photo {
@@ -292,8 +287,103 @@
     justify-content: center;
     align-items: center;
     img {
-    max-width: 31%;
+    max-width: 50%;
     height: auto;
-    margin-right: 200px;
     }
 }
+
+$rainbow : (
+    red : rgba(39,70,80,1),
+    yellow : rgba(42,157,143,1),
+    green : rgba(39,70,80,1),
+    blue : rgba(42,157,143,1),
+    purple : rgba(149,91,165,1),
+  );
+  $i : 1;
+  $borderWidth : 12px;
+  $dimension : 100px;
+  $offset : $dimension - $borderWidth;
+  $clip : $dimension + ($borderWidth *2);
+  $z : length($rainbow);
+  
+  @each $color, $value in $rainbow {
+    .vallon .vallon-ligne:nth-child(#{$i}) {
+      border-color: $value;
+      clip: rect(0, $clip, calc($clip / 2), 0);
+      height: $dimension;
+      left: $offset;
+      -webkit-transform : rotate(180deg);
+      top: $offset;
+      width: $dimension;
+      z-index: $z;
+      -webkit-animation: rainbow-in-out length($rainbow)+s #{calc($i / (length($rainbow) * 2))}s infinite;
+      
+      &:before {
+        border: calc($borderWidth / 4) solid darken($value, 10%);
+        content: '';
+        display: block;
+        height: $dimension - $borderWidth;
+        width: $dimension - calc($borderWidth / 2);
+      }
+    }
+    
+    $i : $i + 1;
+    $dimension : $dimension + ($borderWidth * 2);
+    $offset : $offset - $borderWidth;
+    $clip : $dimension + ($borderWidth *2);
+    $z: $z - 1;
+  }
+  
+  .vallon {
+    height: calc($dimension / 2);
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: $dimension * 1.2;
+
+    .vallon-ligne {
+      border-width: $borderWidth;
+      border-style: solid;
+      border-radius: 100%;
+      position: absolute;
+      
+      &:before {
+        border-radius: 100%;
+      }
+    }
+    
+    .shadow {
+      background:rgba(0,0,0,0.2);
+      bottom:-1px;
+      box-shadow:0 0 10px 1px rgba(0,0,0,0.5);
+      height:2px;
+      left:0;
+      opacity:0;
+      position:absolute;
+      width:0;
+      -webkit-animation: shadow-in-out 5s infinite;
+          
+      + .shadow {
+        left:118px;
+        -webkit-animation-delay:0.5s;
+      }
+    }
+  }
+  
+
+  
+  @-webkit-keyframes rainbow-in-out {
+    0% {-webkit-transform : rotate(180deg);}
+    33% {-webkit-transform : rotate(360deg);}
+    66% {-webkit-transform : rotate(360deg);}
+    100% {-webkit-transform : rotate(540deg);}
+  }
+  
+  @-webkit-keyframes shadow-in-out {
+    0% { opacity: 0; width:0;}
+    33% { opacity: 1; width:length($rainbow) * $borderWidth;}
+    66% { opacity: 1; width:length($rainbow) * $borderWidth;}
+    100% { opacity: 0; width:0;}
+  }
+  

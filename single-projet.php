@@ -13,26 +13,14 @@ $imagesupp = get_post_meta($post->ID, 'imagesupp', true);
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <h2 class="titre-page"><?php the_title(); ?></h2>
 
-                <?php
-                // Récupérer les termes de la taxonomie pour le CPT actuel
-                $taxoCategorie = get_the_terms(get_the_ID(), 'categorie');
-                if ($taxoCategorie && !is_wp_error($taxoCategorie)) {
-                    echo '<p class="description_photo">Catégorie : ';
-                    foreach ($taxoCategorie as $taxoCategorie) {
-                        echo '<a href="' . get_term_link($taxoCategorie) . '">' . $taxoCategorie->name . '</a> ';
-                    }
-                    echo '</p>';
-                }
-                ?>
-
                 <div class="projet-photo__images">
-                    <?php the_post_thumbnail('medium_large'); ?>
+                    <?php the_post_thumbnail('medium_large', array('class' => 'single-image')); ?>
                 
                 <?php
                 if ($imagesupp) {
-                    $image_url = wp_get_attachment_image_src($imagesupp, 'full');
+                    $image_url = wp_get_attachment_image_src($imagesupp, 'medium_large');
                     if ($image_url) {
-                        echo '<img src="' . esc_url($image_url[0]) . '" alt="Photo">';
+                        echo '<img class="single-image" src="' . esc_url($image_url[0]) . '" alt="Photo">';
                     }
                 }
                 ?>
