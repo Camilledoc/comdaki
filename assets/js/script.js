@@ -26,6 +26,23 @@ theToggle.on('click', function() {
     return false;
 });
 
+//animation + page prestation 
+$(".plus-1").click(function(){
+    $(".paragraphe-plus-1").slideToggle();
+  });
+
+  $(".plus-2").click(function(){
+    $(".paragraphe-plus-2").slideToggle();
+  });
+
+  $(".plus-3").click(function(){
+    $(".paragraphe-plus-3").slideToggle();
+  });
+
+  $(".plus-4").click(function(){
+    $(".paragraphe-plus-4").slideToggle();
+  });
+
 //animation cercle page d'accueil  
 const $cercle1 = $('.vague-conteneur-a-propos');
 const initialPositionCercle1 = 2124

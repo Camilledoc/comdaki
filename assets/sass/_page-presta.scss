@@ -2,24 +2,70 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:center;
+    align-items:flex-start;
     margin: 0 20rem 0 20rem;
     h2 {
         color: $orange;
+        margin-left: 10px;
     }
-    h5 {
-          font-weight: 600;
-  
+    h3 {
+    font-weight: 600;
+    text-transform:none;
+    font-family: 'Inter';
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0;
+    }
+    ul {
+        width: 80%;
     }
     li { 
-        padding: 0.5rem;
-    &:before{
+        text-align: left;
+        &:before{
         content: "•"; 
         color: $orange;
         padding: 0.2rem;
+        line-height: 2rem;
     }
     }
-    ul {
-    width: 50%; 
+    p {
+        text-align: justify;
     }
+}
+
+.plus-1,
+.plus-2,
+.plus-3,
+.plus-4 {
+    font-size: 3rem;
+    color: $greenLight;
+    cursor: pointer;     
+}
+
+.float-animation {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    animation: float 6s ease-in-out infinite;
+    transform: translatey(0px);
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+.paragraphe-plus-1, 
+.paragraphe-plus-2,
+.paragraphe-plus-3,
+.paragraphe-plus-4 {
+    display: none; 
 }

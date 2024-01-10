@@ -119,7 +119,7 @@ position: absolute;
 	i {
     font-size: 2rem;
     color: $greenLight;
-    transition: color 0.2s ease-in-out;    
+    transition: color 0.5 ease-in-out;    
   }
   &:before{
     content: '';
@@ -130,7 +130,8 @@ position: absolute;
     width: 50px; /* Largeur initiale de la barre */
     height: 100%;
     background: linear-gradient(to top right, $orangeLight,$orange); /* Dégradé au survol */
-    transition: width 0.3s ease; /* Transition de la largeur pour l'effet d'agrandissement */    z-index: -1; 
+    transition: width 0.7s ease; /* Transition de la largeur pour l'effet d'agrandissement */    
+    z-index: -1; 
   }
   &:hover::before {
     width: 150%; /* Agrandit la barre pour remplir le fond */
@@ -277,7 +278,6 @@ position: absolute;
     max-width:80%; 
     font-size: 1.2rem;
     text-align: justify;
-    line-height: 2rem;
     }
 }
 

@@ -320,7 +320,7 @@ footer {
 .prestations__carre i {
   font-size: 2rem;
   color: #2a9d8f;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.5 ease-in-out;
 }
 .prestations__carre:before {
   content: "";
@@ -331,7 +331,7 @@ footer {
   width: 50px; /* Largeur initiale de la barre */
   height: 100%;
   background: linear-gradient(to top right, #f4a261, #e76f51); /* Dégradé au survol */
-  transition: width 0.3s ease; /* Transition de la largeur pour l'effet d'agrandissement */
+  transition: width 0.7s ease; /* Transition de la largeur pour l'effet d'agrandissement */
   z-index: -1;
 }
 .prestations__carre:hover::before {
@@ -480,7 +480,6 @@ footer {
   max-width: 80%;
   font-size: 1.2rem;
   text-align: justify;
-  line-height: 2rem;
 }
 
 .a-propos__photo {
@@ -658,25 +657,72 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin: 0 20rem 0 20rem;
 }
 .paragraphe-prestation h2 {
   color: #e76f51;
+  margin-left: 10px;
 }
-.paragraphe-prestation h5 {
+.paragraphe-prestation h3 {
   font-weight: 600;
+  text-transform: none;
+  font-family: "Inter";
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0;
+}
+.paragraphe-prestation ul {
+  width: 80%;
 }
 .paragraphe-prestation li {
-  padding: 0.5rem;
+  text-align: left;
 }
 .paragraphe-prestation li:before {
   content: "•";
   color: #e76f51;
   padding: 0.2rem;
+  line-height: 2rem;
 }
-.paragraphe-prestation ul {
-  width: 50%;
+.paragraphe-prestation p {
+  text-align: justify;
+}
+
+.plus-1,
+.plus-2,
+.plus-3,
+.plus-4 {
+  font-size: 3rem;
+  color: #2a9d8f;
+  cursor: pointer;
+}
+
+.float-animation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  animation: float 6s ease-in-out infinite;
+  transform: translatey(0px);
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+.paragraphe-plus-1,
+.paragraphe-plus-2,
+.paragraphe-plus-3,
+.paragraphe-plus-4 {
+  display: none;
 }
 
 .projet-photo__images {
@@ -859,6 +905,7 @@ p {
   font-size: 1rem;
   font-weight: 400;
   color: #171717;
+  line-height: 2rem;
 }
 
 .prestations,
