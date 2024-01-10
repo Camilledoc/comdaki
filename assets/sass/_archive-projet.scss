@@ -1,0 +1,21 @@
+#portefolio-archive-projet .projet {
+    width: calc(100% / 4 - 30px);
+}
+
+.filtres {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+}
+
+.taxonomy-order_item, 
+.taxonomy-categorie_item {
+    width: 200px;
+    height: 31px;
+    border-radius: 7px;
+    background-color: white;
+    font-family: 'Inter';
+    font-weight: 400;
+}

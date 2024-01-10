@@ -43,6 +43,44 @@ $(".plus-1").click(function(){
     $(".paragraphe-plus-4").slideToggle();
   });
 
+
+
+// Filtres en AJAX 
+$(".taxonomy-categorie_item").on('change', function(event){
+    event.preventDefault();
+    ajaxRequest();
+});
+
+$(".taxonomy-order_item").on('change', function(event){
+    event.preventDefault();
+    ajaxRequest();
+});
+
+function ajaxRequest(){
+    // Récupère la valeur sélectionnée dans le menu déroulant des catégories
+    let selectedCategorie = $('.taxonomy-categorie_item').val();
+    let selectedOrder = $('.taxonomy-order_item').val();
+
+    $.ajax({
+        type:'POST', 
+        url: comdaki_js.ajax_url,
+        data:{
+            action:'request_projet_portofolio', 
+            categorie: selectedCategorie, // Envoie la catégorie sélectionnée au serveur
+            order : selectedOrder, // Envoie l'ordre sélectionné au serveur
+        }, 
+        success:function(response){
+            $('.portefolio_catalogue').html(response);
+        },
+    });
+}
+
+
+
+
+
+
+
 //animation cercle page d'accueil  
 const $cercle1 = $('.vague-conteneur-a-propos');
 const initialPositionCercle1 = 2124

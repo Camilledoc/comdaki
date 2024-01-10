@@ -5,6 +5,8 @@
 @import 'front-page';
 @import 'page-presta'; 
 @import 'single-projet';
+@import 'archive-projet';
+@import 'page-a-propos';
 
 body {
     color: $blackLight;
@@ -149,10 +151,6 @@ p {
     @media (max-width: $mobile-breakpoint) {
         font-size: 1.1rem;
     }
-}
-
-.cercle {
-    width: 400px;
 }
 
 .vague {

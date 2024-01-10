@@ -725,6 +725,32 @@ footer {
   display: none;
 }
 
+.cercle {
+  position: sticky;
+  top: 20px;
+  float: right;
+  margin-right: 20px;
+  width: 25%;
+}
+
+.titre-page-porto {
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.titre-page-porto:after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%; /* Début du soulignement au centre du titre */
+  width: 100%;
+  height: 2px; /* Hauteur du soulignement */
+  background-color: #2a9d8f;
+  transform: translateX(-50%);
+  animation: apparitionSoulignement 2s forwards;
+}
+
 .projet-photo__images {
   display: flex;
   justify-content: center;
@@ -732,11 +758,14 @@ footer {
 }
 
 .single-image {
-  width: 30%;
+  width: 20%;
   height: auto;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
   padding: 20px 40px;
+}
+.single-image img {
+  width: 100%;
 }
 
 .single-image:hover {
@@ -758,8 +787,72 @@ footer {
 }
 
 .projet__mission {
-  color: #e76f51;
+  color: #264653;
   font-weight: 600;
+}
+
+.projet-photo__details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  gap: 30px;
+  background-color: rgba(42, 157, 143, 0.7);
+}
+
+.meta-projet {
+  font-weight: 700;
+}
+.meta-projet a:hover {
+  font-weight: 600;
+  color: white;
+}
+
+#portefolio-archive-projet .projet {
+  width: calc(25% - 30px);
+}
+
+.filtres {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+}
+
+.taxonomy-order_item,
+.taxonomy-categorie_item {
+  width: 200px;
+  height: 31px;
+  border-radius: 7px;
+  background-color: white;
+  font-family: "Inter";
+  font-weight: 400;
+}
+
+.a-propos__image {
+  width: 15%;
+}
+
+.a-propos__conteneur-row h2,
+.a-propos__conteneur-column h2 {
+  color: #e76f51;
+  margin-left: 10px;
+}
+
+.a-propos__conteneur-row {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.a-propos__conteneur-column {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  margin: 0 auto;
 }
 
 body {
@@ -924,10 +1017,6 @@ p {
   .point {
     font-size: 1.1rem;
   }
-}
-
-.cercle {
-  width: 400px;
 }
 
 .vague {

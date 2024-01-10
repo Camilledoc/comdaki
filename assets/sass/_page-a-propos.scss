@@ -1,0 +1,24 @@
+.a-propos__image {
+    width: 15%;
+}
+
+.a-propos__conteneur-row h2, 
+.a-propos__conteneur-column h2
+{
+    color: $orange;
+    margin-left: 10px;   
+}
+
+.a-propos__conteneur-row {
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+.a-propos__conteneur-column {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    margin: 0 auto;
+}
