@@ -75,8 +75,23 @@ function ajaxRequest(){
     });
 }
 
+//modale contact 
+
+   // Clic sur le bouton contact dans le menu 
+   $("#menu-item-16").on('click',function(event){
+    event.preventDefault();
+    $(".popup-overlay").css('display','flex');
+    $("#menu-toggle").hide();
+});
 
 
+//fermeture modale quand clic en dehors de la fenêtre
+$(window).on('click', function(event){
+    if(event.target == $(".popup-overlay")[0]) {
+        $(".popup-overlay").css('display','none'); 
+        $("#menu-toggle").show(); 
+    }
+});
 
 
 

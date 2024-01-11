@@ -43,12 +43,7 @@
     justify-content: center;
     align-items: center;
     width: 50vw; 
-    margin: 0 auto; 
-    p {
-        font-size: 1.2rem;
-        text-align: justify;
-        line-height: 2rem;
-    }
+    margin: 0 auto;
 }
 
 .projet__mission {
@@ -68,8 +63,29 @@
 
 .meta-projet {
     font-weight: 700;
+    font-size: 1.1rem;
     a:hover {
         font-weight: 600;
         color: white;
     }
+}
+
+.navigation-projet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 18px auto;
+    font-size: 1.1rem;
+    width: 50vw;;
+    a {
+        transition: transform 0.3s ease-in-out, color 0.2s ease-in-out;
+        &:hover{
+            transform: scale(1.1);
+            color: $greenLight;
+        }
+    }
+}
+
+.navigation-projet__droite {
+    margin-left: auto;
 }

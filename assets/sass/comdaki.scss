@@ -7,6 +7,7 @@
 @import 'single-projet';
 @import 'archive-projet';
 @import 'page-a-propos';
+@import 'modale-contact';
 
 body {
     color: $blackLight;
@@ -130,10 +131,11 @@ h6 {
 
 p {
     font-family: 'Inter';
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 400;
     color: $blackLight;
     line-height: 2rem;
+    text-align: justify;
 }
 
 .prestations, 
@@ -162,6 +164,7 @@ a, li {
     text-decoration: none;
     color: $blackLight;
     list-style-type:none;
+    transition: color 0.2s ease-in-out;
 }
 
 a:hover {
@@ -169,7 +172,7 @@ a:hover {
     color: $orange;
 }
 
-button, 
+button,  
 .button-gut a {
     transition: 0.3s all ease-in-out;
     position: relative;

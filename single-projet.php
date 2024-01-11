@@ -59,7 +59,13 @@ $imagesupp = get_post_meta($post->ID, 'imagesupp', true);
                 echo '<p class="meta-projet"> Date : ' . $year . '</p>';
                 ?>
 
+           
+
             <?php endwhile; endif; ?>
+            </div>
+            <div class="navigation-projet">
+                <div class="navigation-projet__gauche"><?php previous_post_link('%link','<i class="fa-solid fa-arrow-left-long"></i> Projet précédent'); ?> </div>   
+                <div class="navigation-projet__droite"><?php next_post_link('%link','Projet suivant <i class="fa-solid fa-arrow-right-long"></i>'); ?> </div>
             </div>
         </div>
     </div>

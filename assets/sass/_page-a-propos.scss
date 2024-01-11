@@ -1,24 +1,90 @@
 .a-propos__image {
-    width: 15%;
+    width: 50%;
+    padding: 5px;
+}
+
+.cercle-a-propos {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.5;
 }
 
 .a-propos__conteneur-row h2, 
 .a-propos__conteneur-column h2
 {
     color: $orange;
-    margin-left: 10px;   
+    margin: 0px 0 30px 0;
 }
 
 .a-propos__conteneur-row {
-flex-direction: row;
-justify-content: center;
-align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    margin: 0 auto;
 }
 
 .a-propos__conteneur-column {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 70vw;
     margin: 0 auto;
+}
+
+.a-propos__conteneur-annee {
+    color: $blackLight;
+    font-size: 2rem;
+    font-weight: 600;
+    background-image: linear-gradient(120deg, $orangeLight 0%, $orange 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 107%;
+    transition: background-size 0.25s ease-in;
+    margin-right: 15px !important; 
+    &:hover {
+      background-size: 100% 107%;
+    }}
+
+.dut {
+    margin-bottom: 30px !important;
+}
+.deroule__projet {
+    gap: 30px; 
+}
+
+.deroule__projet-carre {
+    position: relative;
+    width: calc( 100% / 4 );
+    border: solid 1px $orangeLight; 
+    border-radius: 10px;
+}
+
+.deroule__projet-num {
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba($color: $orange, $alpha: 0.2);
+    position: absolute;
+    right: 10px; 
+    top: 15px; 
+}
+
+.deroule__projet-titre {
+    height: auto;
+    min-height: 5vh; 
+    padding: 15px 0 15px 15px;
+    font-weight: 600;
+    color: $green;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.deroule__projet-texte {
+    height: auto;
+    min-height: 20vh; 
+    text-align: left;
+    padding: 5px;
 }
