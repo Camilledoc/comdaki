@@ -4,6 +4,9 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: $mobile-breakpoint) {
+      height: 50px;
+  }
     img {
         width:100%;
         margin-bottom: 20px; 
@@ -11,20 +14,26 @@
 }
    
     nav {
+         font-size: 2rem;
+        line-height: 4rem; 
+        padding-top: 180px;
         ul {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;}
-        font-size: 2rem;
-        line-height: 4rem; 
-        padding-top: 180px;
+        align-items: center;
+      }
+      a {
+        transition:none;
+      }
+       
     }
 
 #menu-menu-principal{
   padding: 0;
   a:hover{
     color: $yellow;
+    font-weight: 600;
   }
 }
 
@@ -38,6 +47,9 @@
     background-color: $orange; 
     text-transform: uppercase;
     z-index: 50;
+    @media (max-width: $mobile-breakpoint) {
+      width: 100%;
+  }
    }
 
 #nav-buger { 
@@ -140,6 +152,6 @@
 #nav-buger.open + #menu-toggle {
     opacity: 1;
     visibility: visible;
-    animation: fadeMenu 0.3s ease-out;
+    animation: fadeMenu 0.4s ease-out;
   }
 

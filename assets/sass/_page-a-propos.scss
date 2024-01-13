@@ -1,6 +1,12 @@
 .a-propos__image {
     width: 50%;
     padding: 5px;
+    @media (max-width: $tablette-breakpoint) {
+        width: 30%;
+    }
+}
+.wp-block-image img {
+    border-radius: 10px;
 }
 
 .cercle-a-propos {
@@ -15,6 +21,14 @@
 {
     color: $orange;
     margin: 0px 0 30px 0;
+    @media (max-width: $mobile-breakpoint) {
+        margin: 5px 0 5px 0;
+        text-align: left;
+    }
+    @media (max-width: $tablette-breakpoint) {
+        margin: 20px 0 20px 0;
+        text-align: left;
+    }
 }
 
 .a-propos__conteneur-row {
@@ -24,6 +38,13 @@
     align-items: center;
     width: 70vw;
     margin: 0 auto;
+    @media (max-width: $mobile-breakpoint) {
+        flex-direction: column;
+        width: 100%;
+    }
+    @media (max-width: $tablette-breakpoint) {
+        flex-direction: column;
+    }
 }
 
 .a-propos__conteneur-column {
@@ -33,6 +54,9 @@
     align-items: center;
     width: 70vw;
     margin: 0 auto;
+    @media (max-width: $mobile-breakpoint) {
+        width: 100%;
+    }
 }
 
 .a-propos__conteneur-annee {
@@ -49,11 +73,27 @@
       background-size: 100% 107%;
     }}
 
+.a-propos__formation {
+@media (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+}
+@media (max-width: $tablette-breakpoint) {
+    flex-direction: column;
+}
+}
+
+.texte-annee a {
+    text-decoration: underline;
+}
+
 .dut {
     margin-bottom: 30px !important;
 }
 .deroule__projet {
     gap: 30px; 
+    @media (max-width: $mobile-breakpoint) {
+        flex-direction: column;
+    }
 }
 
 .deroule__projet-carre {
@@ -61,6 +101,12 @@
     width: calc( 100% / 4 );
     border: solid 1px $orangeLight; 
     border-radius: 10px;
+    @media (max-width: $mobile-breakpoint) {
+        width: 100%;
+    }
+    @media (max-width: $tablette-breakpoint) {
+        height: 490px;
+    }
 }
 
 .deroule__projet-num {
@@ -81,6 +127,13 @@
     display: flex;
     align-items: center;
     font-size: 1.2rem;
+    @media (max-width: $mobile-breakpoint) {
+        padding: 5px 0 5px 15px;
+    }
+    @media (max-width: $tablette-breakpoint) {
+        text-align: left;
+    }
+    
 }
 
 .deroule__projet-texte {

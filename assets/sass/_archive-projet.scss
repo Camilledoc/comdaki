@@ -1,5 +1,8 @@
 #portefolio-archive-projet .projet {
     width: calc(100% / 4 - 30px);
+    @media (max-width: $mobile-breakpoint) {
+        width: 80%;
+    }
 }
 
 .filtres {
@@ -18,4 +21,7 @@
     background-color: white;
     font-family: 'Inter';
     font-weight: 400;
+    @media (max-width: $mobile-breakpoint) {
+        width: 130px;
+    }
 }

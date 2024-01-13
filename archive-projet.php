@@ -47,6 +47,10 @@
             echo 'Aucune photo trouvée.';
         }
         ?>
+<div id="arrow" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up-long"></i>
+    </div>
+
 </div>
 
 <?php get_footer();?>
