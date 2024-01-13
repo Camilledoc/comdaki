@@ -20,10 +20,17 @@ function toggleClass(elem, className) {
     elem.toggleClass(className);
 }       
 
-var theToggle = $('#nav-buger');
+let theToggle = $('#nav-buger');
 theToggle.on('click', function() {
     toggleClass($(this), 'open');
     return false;
+});
+
+//fermeture menu quand clic en dehors de la fenêtre
+$(window).on('click', function(event){
+    if(event.target == $(".menu-menu-principal-container")) {
+       $(".#menu-toggle").css('display','none'); 
+    }
 });
 
 //animation + page prestation 
@@ -84,6 +91,17 @@ function ajaxRequest(){
     $("#menu-toggle").hide();
 });
 
+$("#contact").on('click',function(event){
+    event.preventDefault();
+    $(".popup-overlay").css('display','flex');
+    $("#menu-toggle").hide();
+});
+
+$("#contact-a-propos").on('click',function(event){
+    event.preventDefault();
+    $(".popup-overlay").css('display','flex');
+    $("#menu-toggle").hide();
+});
 
 //fermeture modale quand clic en dehors de la fenêtre
 $(window).on('click', function(event){
@@ -93,47 +111,20 @@ $(window).on('click', function(event){
     }
 });
 
-
-
-
-//animation cercle page d'accueil  
-const $cercle1 = $('.vague-conteneur-a-propos');
-const initialPositionCercle1 = 2124
-
-// Obtenir la position verticale de l'élément 
-const positionYcercle1 = $cercle1.offset().top;
-//console.log(positionYcercle1); 
-/*
-$(document).scroll(function() {
-    let scrollPercent = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
-    //console.log(scrollPercent);
-    if (scrollPercent > 76.5) {
-        $cercle1.css('top', (initialPositionCercle1 - ((scrollPercent - 76.5) * 0.2)) + 'px');
-      }
-     /*if (scrollPercent > 100) {
-        $cercle1.css('top', '1145px');
-      }*/
-//});
-
-/*
-//animation vague 
-const $vague1 = $('.vague-1');
-const initialPositionVague1 = 34.953125
-
-// Obtenir la position horizontale de l'élément 
-const positionXVague1 = $vague1.offset().left;
+//flèche scroll 
+let arrow = $('#arrow');
   
-// Utilisation de la position horizontale obtenue
-console.log(positionXVague1); //
+$(window).scroll(function() {
+  if ($(this).scrollTop() > 20) {
+    arrow.fadeIn();
+  } else {
+    arrow.fadeOut();
+  }
+});
 
-$(document).scroll(function() {
-    let scrollPercent = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
-    //console.log(scrollPercent);
-    if (scrollPercent > 0.11) {
-        $vague1.css('left', (initialPositionVague1 + ((scrollPercent - 0.11) * 14)) + 'px');
-      }
-      if (scrollPercent > 33) {
-        $vague1.css('left', '500px');
-      }
-});*/
+arrow.click(function() {
+  $('body,html').animate({scrollTop : 0}, 500);
+  return false;
+});
+
 })(jQuery);

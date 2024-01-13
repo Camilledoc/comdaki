@@ -9,7 +9,7 @@
 
                 if ($terms && !is_wp_error($terms)) {
                     echo '<select class="taxonomy-categorie_item" name="taxonomy-categorie" id="taxonomy-categorie">';
-                    echo '<option value="">CATEGORIES</option>';
+                    echo '<option value="">CATÉGORIES</option>';
                     foreach ($terms as $term) {
                         echo '<option class="taxonomy-categorie_items" value="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</option>';
                     }

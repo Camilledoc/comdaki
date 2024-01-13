@@ -80,7 +80,10 @@
     <div class="a-propos__content">
         <div class="a-propos__texte">
             <p class="surligne">Camille Tromp, freelance graphiste et webdesigner</p>
-            <p>À travers mon logo et mon nom, je mets en avant deux éléments clés qui guident mon parcours : la communication et l'attachement à mon territoire. Je relève le défi de me lancer à mon compte pour contribuer au rayonnement et au développement de ma région en accompagnant les artisans, entrepreneurs, entreprises, associations d'ici et d'ailleurs pour rayonner et faire connaître leurs valeurs. Consciente des enjeux environnementaux qui concernent tous les corps de métier, notamment le numérique, j'applique des techniques pour limiter l'impact de mon activité et faire travailler des prestataires locaux. </p>
+            <p>À travers mon logo et mon nom, je mets en lumière deux éléments clés qui guident mon parcours professionnel : <strong>la communication et l'attachement à mon territoire</strong>. Mes voyages m'ont permis de réaliser la richesse de chacune des cultures, c’est pourquoi mon ambition est de <strong>contribuer au rayonnement de l’excellence locale</strong> et à son dynamisme. 
+Mon engagement se concrétise par <strong>un accompagnement dédié aux artisans, entrepreneurs, entreprises et associations</strong>, les soutenant dans leur démarche pour se faire connaître et valoriser leurs atouts.
+Consciente des défis environnementaux qui touchent tous les secteurs, notamment le domaine numérique, j'adopte des pratiques visant à <strong>réduire l'impact de mon activité et à favoriser la collaboration avec des prestataires locaux</strong>.
+</p>
             
             <div class="a-propos__button">
                 <a href="<?php echo home_url('/a-propos/'); ?>">
@@ -101,6 +104,9 @@
             </div>
         </div>
 
+        <div id="arrow" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up-long"></i>
+    </div>
         
 
     </div>

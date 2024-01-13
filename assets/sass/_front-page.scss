@@ -118,7 +118,7 @@ position: absolute;
     box-shadow: 0 8px 45px 3px rgba(0, 0, 0, 0.13);
 	i {
     font-size: 2rem;
-    color: $greenLight;
+    color: $orange;
     transition: color 0.5 ease-in-out;    
   }
   &:before{
@@ -147,10 +147,6 @@ position: absolute;
 }
 
 //portefolio
-.cercle-conteneur-porte {
-    position: absolute;
-    right: 6px;
-}
 
 .portefolio {
     background-color: white;
@@ -387,3 +383,12 @@ $rainbow : (
     100% { opacity: 0; width:0;}
   }
   
+  //flèche scroll 
+  #arrow {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+  }

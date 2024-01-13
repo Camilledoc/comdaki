@@ -46,6 +46,23 @@
     margin: 0 auto;
 }
 
+.projet-photo__site {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    color: $green;
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 10px; 
+        margin: 2px 0 30px 0;
+        line-height: 1.2rem;
+        
+    &:hover {
+        font-weight: 900;
+        color: $greenLight;
+      }
+    }
+
 .projet__mission {
     color: $green; 
     font-weight: 600;

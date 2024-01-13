@@ -319,7 +319,7 @@ footer {
 }
 .prestations__carre i {
   font-size: 2rem;
-  color: #2a9d8f;
+  color: #e76f51;
   transition: color 0.5 ease-in-out;
 }
 .prestations__carre:before {
@@ -344,11 +344,6 @@ footer {
 .prestations__button {
   display: flex;
   justify-content: center;
-}
-
-.cercle-conteneur-porte {
-  position: absolute;
-  right: 6px;
 }
 
 .portefolio {
@@ -653,6 +648,15 @@ footer {
     width: 0;
   }
 }
+#arrow {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
 .paragraphe-prestation {
   display: flex;
   flex-direction: column;
@@ -677,6 +681,8 @@ footer {
 }
 .paragraphe-prestation li {
   text-align: left;
+  font-size: 1.1rem;
+  line-height: 2rem;
 }
 .paragraphe-prestation li:before {
   content: "•";
@@ -695,13 +701,14 @@ footer {
   font-size: 3rem;
   color: #2a9d8f;
   cursor: pointer;
+  margin-left: 50px;
 }
 
 .float-animation {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: baseline;
   align-items: center;
   animation: float 6s ease-in-out infinite;
   transform: translatey(0px);
@@ -731,6 +738,8 @@ footer {
   float: right;
   margin-right: 20px;
   width: 25%;
+  z-index: -1;
+  opacity: 0.8;
 }
 
 .titre-page-porto {
@@ -779,6 +788,22 @@ footer {
   align-items: center;
   width: 50vw;
   margin: 0 auto;
+}
+
+.projet-photo__site {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  color: #264653;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 10px;
+  margin: 2px 0 30px 0;
+  line-height: 1.2rem;
+}
+.projet-photo__site:hover {
+  font-weight: 900;
+  color: #2a9d8f;
 }
 
 .projet__mission {
@@ -855,7 +880,8 @@ footer {
 .cercle-a-propos {
   position: absolute;
   z-index: -1;
-  opacity: 0.5;
+  opacity: 0.3;
+  width: 25%;
 }
 
 .a-propos__conteneur-row h2,
@@ -1178,11 +1204,11 @@ h6 {
   position: absolute;
   bottom: -5px;
   left: 50%; /* Début du soulignement au centre du titre */
-  width: 100%;
+  width: 0%;
   height: 2px; /* Hauteur du soulignement */
   background-color: #f4a261;
   transform: translateX(-50%);
-  animation: apparitionSoulignement 2s forwards;
+  animation: apparitionSoulignement 2s forwards 500ms;
 }
 
 @keyframes apparitionSoulignement {

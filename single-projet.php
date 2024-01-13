@@ -5,6 +5,7 @@
 $mission = get_post_meta($post->ID, 'mission', true);
 $client = get_post_meta($post->ID, 'client', true);
 $imagesupp = get_post_meta($post->ID, 'imagesupp', true);
+$siteweb = get_post_meta($post->ID, 'site', true);
 ?>
 
 <div class="single-projet">
@@ -36,6 +37,10 @@ $imagesupp = get_post_meta($post->ID, 'imagesupp', true);
                     echo '<p> ' . $content . '</p>';
                     ?>
                 </div>
+
+                <?php if ($siteweb) {
+                echo '<a class="projet-photo__site" href="' . $siteweb . '" target="_blank"><i class="fa-solid fa-arrow-right-long"></i>Voir le site web</a>';
+                } ?>
 
                 <div class="projet-photo__details">
                 <?php

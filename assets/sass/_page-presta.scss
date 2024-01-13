@@ -21,6 +21,8 @@
     }
     li { 
         text-align: left;
+        font-size: 1.1rem;
+        line-height: 2rem;
         &:before{
         content: "•"; 
         color: $orange;
@@ -39,14 +41,15 @@
 .plus-4 {
     font-size: 3rem;
     color: $greenLight;
-    cursor: pointer;     
+    cursor: pointer;
+    margin-left: 50px;     
 }
 
 .float-animation {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content:baseline;
     align-items: center;
     animation: float 6s ease-in-out infinite;
     transform: translatey(0px);
@@ -76,4 +79,6 @@
     float: right;
     margin-right: 20px; 
     width: 25%;   
+    z-index: -1;
+    opacity: 0.8;
 }
