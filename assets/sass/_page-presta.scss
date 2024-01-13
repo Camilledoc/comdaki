@@ -3,13 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items:flex-start;
-    margin: 0 20rem 0 20rem;
-    @media (max-width: $mobile-breakpoint) {
-        margin: 0;
-     }    
-     @media (max-width: $tablette-breakpoint) {
-        margin: 0 5rem 0 5rem;
-     }    
+  
     h2 {
         color: $orange;
         margin-left: 10px;
@@ -62,7 +56,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content:baseline;
+    justify-content:flex-start;
     align-items: center;
     animation: float 6s ease-in-out infinite;
     transform: translatey(0px);
@@ -84,6 +78,14 @@
 .paragraphe-plus-3,
 .paragraphe-plus-4 {
     display: none; 
+}
+
+hr {
+    height: 1px;
+    background: linear-gradient(to top right, $greenLight, white);
+    border: none;
+    width: 70%;
+    margin: 0;
 }
 
 .cercle {

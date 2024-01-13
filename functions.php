@@ -5,8 +5,8 @@
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() 
 {
-    wp_enqueue_style( 'theme-style', get_stylesheet_directory_uri() . '/assets/css/comdaki.css', array(), time() );
-    wp_enqueue_script( 'script-js', get_stylesheet_directory_uri() . '/assets/js/script.js', array('jquery'), time(), true );
+    wp_enqueue_style( 'theme-style', get_stylesheet_directory_uri() . '/assets/css/comdaki.css', array(), '1.0.0' );
+    wp_enqueue_script( 'script-js', get_stylesheet_directory_uri() . '/assets/js/script.js', array('jquery'), '1.0.0', true );
     wp_localize_script('script-js', 'comdaki_js', array('ajax_url' => admin_url('admin-ajax.php'))); 
 }
 
@@ -158,27 +158,3 @@ function comdaki_request_projet_portofolio()
 /**actions requêtes */
 add_action('wp_ajax_request_projet_portofolio', 'comdaki_request_projet_portofolio'); 
 add_action('wp_ajax_nopriv_request_projet_portofolio', 'comdaki_request_projet_portofolio'); 
-
-
-    /*if($query->have_posts()){
-        while ($query->have_posts()){
-        $query->the_post(); 
-        $title = the_title();
-        $thumbnail = get_post_thumbnail_id();  
-        $image = wp_get_attachment_image_src($thumbnail, 'medium'); 
-        $url = get_permalink();    
-        $id = get_the_id();  
-        $item = array(
-            'img' => $image,
-            'url' => $url,
-            'id' => $id,
-        );
-        $response[] = $item;
-    }
-} else {
-    $response = false; 
-    $id = false;
-}
-wp_reset_postdata();
-return $response;
-}*/

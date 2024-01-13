@@ -1,0 +1,29 @@
+.taxonomy__carres {
+  display: flex;
+  flex-direction: row; 
+  justify-content:space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  height: auto;
+  @media (max-width: $mobile-breakpoint) {
+    flex-direction: column;} 
+}
+
+.taxonomy__item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc( (100% - 60px ) / 4 );
+    h2 {
+    font-size: 1rem;
+    text-align: center;
+}
+}
+
+.taxo-photo__images, 
+.taxonomy__content p {
+  text-align: center;
+}

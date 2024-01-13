@@ -15,6 +15,6 @@
     <?php get_template_part('templates/modale-contact'); ?>
 </footer>
 <?php wp_footer() ?>
-
+</main>
 </body>
 </html>

@@ -4,8 +4,10 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
     border-top: solid 1px $orangeLight;
+    max-width: 1440px;
+    margin: 20px auto;
+    padding: 20px 20px;
 }
 
 .menu-footer nav {

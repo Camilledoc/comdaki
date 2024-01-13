@@ -101,11 +101,8 @@
     width: calc( 100% / 4 );
     border: solid 1px $orangeLight; 
     border-radius: 10px;
-    @media (max-width: $mobile-breakpoint) {
-        width: 100%;
-    }
     @media (max-width: $tablette-breakpoint) {
-        height: 490px;
+        width: calc( 100% / 2 );
     }
 }
 
@@ -141,4 +138,7 @@
     min-height: 20vh; 
     text-align: left;
     padding: 5px;
+    @media (max-width: $mobile-breakpoint) {
+        min-height: 10vh;
+    }
 }

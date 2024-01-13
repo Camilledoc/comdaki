@@ -23,7 +23,8 @@
   }
 
   .popup-contact {
-    width: 60vw;
+    width: 75vw;
+    max-width: 1440px;
     background: white;
     border: solid 3px $blackLight;
     border-radius: 10px;
@@ -32,10 +33,21 @@
     z-index: 100;
     overflow: hidden;
     margin: 2% auto;
-
-    @media (max-width: $mobile-breakpoint) {
-        width: 75%;
+    @media (max-width: $tablette-breakpoint) {
+        width: 85vw;
     }
+    @media (max-width: $mobile-breakpoint) {
+        width: 75vw;
+    }
+}
+
+.fa-xmark {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 200;
 }
 .popup-conteneur {
     display: flex;
@@ -51,7 +63,12 @@
     background-color: $green;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 6%;
+    @media (max-width: $mobile-breakpoint) {
+        padding-top: 3%;
+        padding-bottom: 3%;
+     }
     p {
         color: white;
         font-size: 1.1rem;
@@ -94,13 +111,18 @@
       }
     }
 
-.popup-formulaire, 
-.invalid {
+.popup-formulaire {
     flex: 1; 
+    width: 100%;
+}
+
+.formulaire-wrapper,
+.invalid {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 90%;
     @media (max-width: $mobile-breakpoint) {
         max-width: 90%;
         margin: 0 auto;
@@ -109,17 +131,13 @@
         border: solid 1px #B8BBC2;
         border-radius: 8px;
         height: 30px;
-        width: 210px;
     }
     textarea {
         border: solid 1px #B8BBC2;
         border-radius: 8px;
-        width: 210px;
     }
     p {
-        @media (max-width: $mobile-breakpoint) {
-            margin: 0;
-         } 
+        line-height: 1.2rem;
     }
 }
 
@@ -152,6 +170,7 @@
 
 //pour les messages d'erreur 
 .wpcf7-not-valid-tip {
+    font-size: 1rem;
     @media (max-width: $mobile-breakpoint) {
         font-size: 0.8rem;
      }

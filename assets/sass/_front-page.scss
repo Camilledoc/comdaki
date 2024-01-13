@@ -37,64 +37,70 @@
 }
 
 .hero__content {
-  width: 80%;
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
 }
 
-.hero__title {
-  position: absolute;
-  width: 100%;
-  top: 52%;
-  left: 50%; 
-  transform: translate(-50%);
-  z-index: 2; 
-  @media (max-width: $mobile-breakpoint) {
-    width: 77%;
-    top: 38%;
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }
-}
-
 .hero__logo {
-    width: 50%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 24%; 
-    left: 50%; 
-    transform: translateX(-50%);
-    z-index: 1; 
+    max-width: 60%;
+    position: relative;
+    z-index: 2; 
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+    animation: fadeInUp 1s ease-out forwards;
     img{
         width:100%;
 }
   @media (max-width: $mobile-breakpoint) {
-   width: 100%;}
+    max-width:  100%;}
    @media (max-width: $tablette-breakpoint) {
-    width: 80%;
+    max-width: 90%;
 }
+}
+
+.hero__title {
+  position: relative;
+  z-index:2;
+  padding: 0 40px;
+  opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+    animation: fadeInUp 1s ease-out forwards 0.8s;
 }
 
 .hero__subtitle {
-    position: absolute;
-    top: 58%; 
-    left: 50%; 
-    transform: translateX(-50%);
-    z-index: 2; 
-    @media (max-width: $mobile-breakpoint) {
-      top: 53%;
-  }
+  position: relative;
+  z-index:2 ;
+  opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+    animation: fadeInUp 1s ease-out forwards 1.2s;
 }
 
 .hero__button {
-position: absolute;
-  top: 70%; /* Ajustez la position verticale du bouton */
-  left: 50%; /* Ajustez la position horizontale du bouton */
-  transform: translateX(-50%);
-  z-index: 2;
+  position: relative;
+  z-index:2;
+  text-align: center;
 }  
 
 #contact {
     margin: 12px; 
 }
+
 //prestations 
 .prestations {
     position: relative;
@@ -106,7 +112,7 @@ position: absolute;
     justify-content:space-around;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px; 
+    gap: 20px;
     width: 100%;
     height: auto;
     @media (max-width: $mobile-breakpoint) {
@@ -123,7 +129,7 @@ position: absolute;
 }
 
 .prestations__carre{
-    width: calc( 100% / 4 - 30px);
+    width: calc( (100% - 60px ) / 4 );
     height: 200px;
     position: relative;
     overflow: hidden;
@@ -137,11 +143,15 @@ position: absolute;
     box-sizing: border-box;
     padding-left: 10px; /* Ajout d'un espace pour la barre à gauche */
     box-shadow: 0 8px 45px 3px rgba(0, 0, 0, 0.13);
-    @media (max-width: $mobile-breakpoint) {
-      width: 100%;
-      height: auto;
-      flex-direction: row;;
-   }
+    @media (max-width: $tablette-breakpoint) {
+      width: calc( (100% - 20px ) / 2 );
+  }
+  @media (max-width: $mobile-breakpoint) {
+      width:70%;
+      flex-direction: column;
+      height: 150px;
+  }
+
 	i {
     font-size: 2rem;
     color: $orange;
@@ -291,20 +301,35 @@ position: absolute;
 }
 
 .a-propos__content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    @media (max-width: $mobile-breakpoint) {
-      flex-direction: column;
-   }    
+  display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 0 40px;
+    grid-template-areas: 
+    "titre ." 
+    "texte image" 
+    "texte image" 
+    "bouton .";  
+    @media (max-width: $tablette-breakpoint) {
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+      "titre"
+      "image"
+      "texte"
+      "bouton";
+  }  
 }
 
+.a-propos__titre {
+  grid-area: titre;
+  font-weight: 600;
+  color: $green;
+  text-align: center;
+}
+
+
 .a-propos__texte {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    grid-area: texte;
     p {
     max-width:80%; 
     font-size: 1.2rem;
@@ -316,19 +341,39 @@ position: absolute;
 }
 
 .a-propos__photo {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-    max-width: 50%;
-    height: auto;
-    border-radius: 10px;
-    @media (max-width: $tablette-breakpoint) {
-      max-width: 80%;
-  }
-    }
+  grid-area: image;
+  width: 100%;
+  text-align:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.a-propos__photo-wrapper {
+  position:relative;
+  width:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: $mobile-breakpoint) {
+    width:37%;
+ }  
+ @media (max-width: $tablette-breakpoint) {
+  width:30%;
+}  
+}
+
+.a-propos__photo-wrapper img {
+  width:100%;
+  border-radius: 10px;
+}
+
+.a-propos__button {
+  grid-area: bouton;
+  text-align: center;
+}
+
+//animation vallon 
 
 $rainbow : (
     red : rgba(39,70,80,1),
@@ -338,8 +383,8 @@ $rainbow : (
     purple : rgba(149,91,165,1),
   );
   $i : 1;
-  $borderWidth : 12px;
-  $dimension : 100px;
+  $borderWidth : 10px;
+  $dimension : 80px;
   $offset : $dimension - $borderWidth;
   $clip : $dimension + ($borderWidth *2);
   $z : length($rainbow);

@@ -8,6 +8,7 @@
 	<script src="https://kit.fontawesome.com/4d354bce74.js" crossorigin="anonymous"></script>
 </head>
 
+<body>
 <header>
 	<div class="header">
 		<a href="<?php echo get_home_url(); ?>">
@@ -30,4 +31,5 @@
 	</div>
 </header>
 
-<body>
+<main>
+

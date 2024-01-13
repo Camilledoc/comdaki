@@ -111,6 +111,15 @@ $(window).on('click', function(event){
     }
 });
 
+//fermeture modale quand clic sur la croix 
+$(window).on('click', function(event){
+    if ($(event.target).attr("id") === "croix")  {
+        $(".popup-overlay").css('display','none');
+        $("#menu-toggle").show();
+    }
+});
+
+
 //flèche scroll 
 let arrow = $('#arrow');
   
