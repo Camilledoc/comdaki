@@ -163,7 +163,7 @@ li {
     color: $blackLight;
     list-style-type:none;
     @media (max-width: $mobile-breakpoint) {
-        font-size: 3rem;
+        font-size: 2rem;
         line-height: 5rem;
     }
 }
